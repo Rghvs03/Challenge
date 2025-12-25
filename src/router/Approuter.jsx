@@ -6,6 +6,9 @@ import Login from "../components/Login";
 import ProtectedRoute from "../components/ProtectedRoute";
 import HomeLayout from "../Layouts/HomeLayout";
 import AuthLayout from "../Layouts/AuthLayout";
+import Home from "../Pages/Home";
+import Users from "../Pages/Users";
+import Product from "../Pages/Product";
 
 const Approuter = () => {
   const router = createBrowserRouter([
@@ -26,6 +29,20 @@ const Approuter = () => {
         {
           path: "",
           element: <HomeLayout />,
+          children: [
+            {
+              path: "",
+              element: <Home />,
+            },
+            {
+              path: "users",
+              element: <Users />,
+            },
+            {
+              path: "products",
+              element: <Product />,
+            },
+          ],
         },
       ],
     },
